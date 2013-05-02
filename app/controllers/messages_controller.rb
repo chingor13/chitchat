@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
     if @message.save
       render json: {status: 200, message: @message}
     else
-      render json: {status: 500, errors: @message.errors.full_messages}
+      render json: {status: 422, errors: @message.errors.full_messages}
     end
   end
 

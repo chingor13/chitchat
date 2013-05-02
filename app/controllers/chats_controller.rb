@@ -19,7 +19,7 @@ class ChatsController < ApplicationController
     if @chat.save
       render json: {status: 200, chat: @chat}
     else
-      render json: {status: 500, errors: @chat.errors.full_messages}
+      render json: {status: 422, errors: @chat.errors.full_messages}
     end
   end
 
