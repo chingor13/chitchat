@@ -17,23 +17,23 @@ ActiveRecord::Schema.define(version: 20130502062658) do
     t.integer  "from_id",                       null: false
     t.integer  "to_id",                         null: false
     t.string   "status",     default: "closed", null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   create_table "messages", force: true do |t|
     t.integer  "user_id",    null: false
     t.integer  "chat_id",    null: false
-    t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.text     "body",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: true do |t|
-    t.string   "identifier"
-    t.boolean  "available"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "identifier",                 null: false
+    t.boolean  "available",  default: false, null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
 end
