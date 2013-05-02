@@ -1,0 +1,11 @@
+---
+host:
+  identifier: unique-id-1
+  available: false
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+bob:
+  identifier: unique-id-2
+  available: false
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>

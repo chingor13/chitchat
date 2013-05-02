@@ -1,0 +1,39 @@
+---
+message1:
+  id: 1
+  chat_id: <%= ActiveRecord::Fixtures.identify(:first_chat) %>
+  user_id: <%= ActiveRecord::Fixtures.identify(:bob) %>
+  body: "Hi there, just wondering if you could help me"
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+message2:
+  id: 2
+  chat_id: <%= ActiveRecord::Fixtures.identify(:first_chat) %>
+  user_id: <%= ActiveRecord::Fixtures.identify(:host) %>
+  body: "Sure, what do you need?"
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+message3:
+  id: 3
+  chat_id: <%= ActiveRecord::Fixtures.identify(:first_chat) %>
+  user_id: <%= ActiveRecord::Fixtures.identify(:bob) %>
+  body: "I was wondering what kind of tattoo I should get"
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+message4:
+  id: 4
+  chat_id: <%= ActiveRecord::Fixtures.identify(:first_chat) %>
+  user_id: <%= ActiveRecord::Fixtures.identify(:bob) %>
+  body: "maybe something for my face"
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+message5:
+  id: 5
+  chat_id: <%= ActiveRecord::Fixtures.identify(:first_chat) %>
+  user_id: <%= ActiveRecord::Fixtures.identify(:host) %>
+  body: "YOLO"
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+
+  

@@ -1,0 +1,6 @@
+---
+first_chat:
+  from_id: <%= ActiveRecord::Fixtures.identify(:bob) %>
+  to_id: <%= ActiveRecord::Fixtures.identify(:host) %>
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
