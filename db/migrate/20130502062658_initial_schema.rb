@@ -13,7 +13,9 @@ class InitialSchema < ActiveRecord::Migration
     end
 
     create_table :messages do |t|
+      t.integer :user_id, :null => false
       t.integer :call_id, :null => false
+      t.text :body
       t.timestamps
     end
   end
