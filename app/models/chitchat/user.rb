@@ -1,7 +1,5 @@
 module Chitchat
   class User < ActiveRecord::Base
-    has_many :messages, inverse_of: :user
-
     validates :identifier, presence: true, uniqueness: true
 
     def sign_on!
@@ -12,7 +10,7 @@ module Chitchat
       update_attributes!(available: false)
     end
     
-    def as_json
+    def as_json(options = nil)
       {identifer: identifier, available: available}.as_json
     end
     

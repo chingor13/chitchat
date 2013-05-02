@@ -1,19 +1,17 @@
 class MessagesController < ApplicationController
-  before_filter :load_chat
 
-  # POST /calls/:id/messages
+  # POST /chats/:id/messages
   def create
-    @message = ChitChat::Message.new(params[:message])
+    chat = Chitchat::Chat.find(params[:chat_id])
+    
+    user = Chitchat::User.find_by_identifier(params[:user])
+    
+    @message = chat.messages.build(user: user, body: params[:body])
     if @message.save
-
+      render json: {status: 200, message: @message}
     else
-      render :new
+      render json: {status: 500, errors: @message.errors.full_messages}
     end
   end
 
-  protected
-
-  def load_chat
-    @chat = Chitchat::Chat.find(params[:chat_id])
-  end
 end

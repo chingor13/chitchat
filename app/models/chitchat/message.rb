@@ -2,12 +2,18 @@ module Chitchat
   class Message < ActiveRecord::Base
 
     belongs_to :user
-    belongs_to :chat
+    belongs_to :chat, inverse_of: :messages
 
-    def as_json
+    validates :chat, presence: true
+    validates :user, presence: true
+    validates :body, presence: true
+
+    def as_json(options = nil)
       {
-        body:  body,
-        user_id: user_id
+        id:       id,
+        chat_id:  chat.id,
+        user_id:  user.identifier,
+        body:     body,
       }.as_json
     end
 
