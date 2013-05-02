@@ -12,7 +12,7 @@ module Chitchat
       {
         id:       id,
         chat_id:  chat.id,
-        user_id:  user.identifier,
+        user:     user.identifier,
         body:     body,
       }.as_json
     end

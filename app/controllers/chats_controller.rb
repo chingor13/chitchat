@@ -11,8 +11,8 @@ class ChatsController < ApplicationController
 
   # POST /chats
   def create
-    from = Chitchat::User.find_by_identifier(params[:from])
-    to = Chitchat::User.find_by_identifier(params[:to])
+    from = Chitchat::User.find_or_create_by_identifier(params[:from])
+    to = Chitchat::User.find_or_create_by_identifier(params[:to])
     
     @chat = Chitchat::Chat.new(from: from, to: to)
     
