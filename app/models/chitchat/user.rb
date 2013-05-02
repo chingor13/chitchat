@@ -1,5 +1,5 @@
 module Chitchat
-  class User < ActiveRecord::Base
+  class User < Chitchat::Base
     validates :identifier, presence: true, uniqueness: true
 
     def sign_on!

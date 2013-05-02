@@ -1,5 +1,5 @@
 module Chitchat
-  class Message < ActiveRecord::Base
+  class Message < Chitchat::Base
 
     belongs_to :user
     belongs_to :chat, inverse_of: :messages

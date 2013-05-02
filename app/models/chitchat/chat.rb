@@ -1,5 +1,5 @@
 module Chitchat
-  class Chat < ActiveRecord::Base
+  class Chat < Chitchat::Base
 
     belongs_to :to, class_name: "Chitchat::User"
     belongs_to :from, class_name: "Chitchat::User"

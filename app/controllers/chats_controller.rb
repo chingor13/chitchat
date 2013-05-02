@@ -25,7 +25,10 @@ class ChatsController < ApplicationController
 
   # GET /chats/:id
   def show
-    render json: {status: 200, chat: @chat}
+    respond_to do |format|
+      format.json { render json: {status: 200, chat: @chat} }
+      format.html
+    end
   end
 
   # POST /chats/:id/answer
