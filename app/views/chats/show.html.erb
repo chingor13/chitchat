@@ -1,8 +1,14 @@
-<ul class="messages">
+<ul class="messages" data-chat-id="<%= @chat.id %>">
   <% @chat.messages.each do |message| %>
-    <li><%= message.user.identifier %>: <%= message.body %></li>
+    <li data-message-id="<%= message.id %>"><%= message.user.identifier %>: <%= message.body %></li>
   <% end %>
 </ul>
 <%= form_for([@chat, Chitchat::Message.new], remote: true) do |form| %>
-  <%= form.text_field :body %><%= form.submit %>
+  <label>Identifier</label>
+  <%= text_field_tag(:user) %>
+  <br/>
+  <label>Body</label>
+  <%= text_field_tag :body %>
+  <br/>
+  <%= form.submit %>
 <% end %>
