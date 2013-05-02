@@ -12,8 +12,8 @@ module Chitchat
       update_attributes!(available: false)
     end
     
-    def to_hash
-      {identifer: identifier, available: available}
+    def as_json
+      {identifer: identifier, available: available}.as_json
     end
     
   end

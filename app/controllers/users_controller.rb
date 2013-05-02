@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   # GET /users/:id
   def show
-    render json: {status: response.status, user: @user.to_hash}
+    render json: {status: response.status, user: @user}
   end
 
   # POST /users/:id/sign_on
