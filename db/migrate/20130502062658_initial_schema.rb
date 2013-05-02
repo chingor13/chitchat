@@ -6,7 +6,7 @@ class InitialSchema < ActiveRecord::Migration
       t.timestamps
     end
 
-    create_table :calls do |t|
+    create_table :chats do |t|
       t.integer :from_id, :null => false
       t.integer :to_id, :null => false
       t.timestamps
@@ -14,7 +14,7 @@ class InitialSchema < ActiveRecord::Migration
 
     create_table :messages do |t|
       t.integer :user_id, :null => false
-      t.integer :call_id, :null => false
+      t.integer :chat_id, :null => false
       t.text :body
       t.timestamps
     end
@@ -22,7 +22,7 @@ class InitialSchema < ActiveRecord::Migration
 
   def down
     drop_table :messages
-    drop_table :calls
+    drop_table :chats
     drop_table :users
   end
 end

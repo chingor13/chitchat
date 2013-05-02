@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20130502062658) do
 
-  create_table "calls", force: true do |t|
+  create_table "chats", force: true do |t|
     t.integer  "from_id",    null: false
     t.integer  "to_id",      null: false
     t.datetime "created_at"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20130502062658) do
 
   create_table "messages", force: true do |t|
     t.integer  "user_id",    null: false
-    t.integer  "call_id",    null: false
+    t.integer  "chat_id",    null: false
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
