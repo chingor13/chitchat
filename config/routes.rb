@@ -12,6 +12,6 @@ Chitchat::Application.routes.draw do
       post :answer
       post :hang_up
     end
-    resources :messages, :only => [:create]
+    resources :messages, :only => [:index, :create]
   end
 end
