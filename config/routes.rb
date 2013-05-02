@@ -9,8 +9,8 @@ Chitchat::Application.routes.draw do
 
   resources :chats, :only => [:show, :create] do
     member do
-      post :answer
-      post :hang_up
+      put :answer
+      put :hang_up
     end
     resources :messages, :only => [:index, :create]
   end

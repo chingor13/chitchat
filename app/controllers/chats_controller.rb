@@ -31,13 +31,13 @@ class ChatsController < ApplicationController
     end
   end
 
-  # POST /chats/:id/answer
+  # PUT /chats/:id/answer
   def answer
     @chat.answer!
     render json: {status: 200}
   end
 
-  # POST /chats/:id/hang_up
+  # PUT /chats/:id/hang_up
   def hang_up
     @chat.hang_up!
     render json: {status: 200}
@@ -47,7 +47,7 @@ class ChatsController < ApplicationController
   protected
 
   def load_user
-    @user = Chitchat::User.find(params[:user_id])
+    @user = Chitchat::User.find_or_create_by_identifier!(params[:user_id])
   end
   
   def load_chat
