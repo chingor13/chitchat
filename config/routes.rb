@@ -1,8 +1,8 @@
 Chitchat::Application.routes.draw do
   resources :users, :only => [:show] do
     member do
-      post :sign_on
-      post :sign_off
+      put :sign_on
+      put :sign_off
     end
     resources :chats, :only => [:index]
   end
