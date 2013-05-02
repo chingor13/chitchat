@@ -9,7 +9,7 @@ class InitialSchema < ActiveRecord::Migration
     create_table :chats do |t|
       t.integer :from_id, null: false
       t.integer :to_id, null: false
-      t.string :status, null: false, default: "closed"
+      t.string :status, null: false, default: "pending"
       t.timestamps null: false
     end
 
