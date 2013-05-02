@@ -17,7 +17,7 @@ module Chitchat
     def as_json
       {
         to_id: to_id,
-        from_id: from_id
+        from_id: from_id,
         messages: messages.map(&:as_json)
       }.as_json
     end
