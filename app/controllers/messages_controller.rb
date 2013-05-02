@@ -1,14 +1,7 @@
 class MessagesController < ApplicationController
   before_filter :load_chat
 
-  def index
-    @messages = @chat.messages
-  end
-
-  def new
-    @message = ChitChat::Message.new(params[:message])
-  end
-
+  # POST /calls/:id/messages
   def create
     @message = ChitChat::Message.new(params[:message])
     if @message.save

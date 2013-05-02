@@ -14,8 +14,9 @@
 ActiveRecord::Schema.define(version: 20130502062658) do
 
   create_table "chats", force: true do |t|
-    t.integer  "from_id",    null: false
-    t.integer  "to_id",      null: false
+    t.integer  "from_id",                       null: false
+    t.integer  "to_id",                         null: false
+    t.string   "status",     default: "closed", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

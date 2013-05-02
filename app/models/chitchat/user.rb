@@ -5,11 +5,11 @@ module Chitchat
     validates :identifier, :presence => true, :uniqueness => true
 
     def sign_on!
-      # TODO
+      update_attributes!(:available => true)
     end
 
     def sign_off!
-      # TODO
+      update_attributes!(:available => false)
     end
   end
 end
